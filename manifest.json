@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Tabster — Organize Tabs by Category",
+  "version": "1.0.0",
+  "description": "Automatically groups your open tabs into color-coded categories, with a popup widget to browse and jump between them.",
+  "permissions": ["tabs", "tabGroups", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Tabster"
+  },
+  "options_page": "options.html"
+}

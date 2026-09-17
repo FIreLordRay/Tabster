@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Tabster — Categories</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <h1>Tabster — Categories</h1>
+  <p class="muted">
+    Each category matches tabs by domain (e.g. <code>github.com</code>) or keyword found in the
+    URL/title. The first matching domain wins; longer/more specific domains take priority.
+  </p>
+  <div id="categories"></div>
+  <button id="addCategoryBtn">+ Add category</button>
+  <div class="footer">
+    <button id="resetBtn" class="secondary">Reset to defaults</button>
+    <button id="saveBtn" class="primary">Save changes</button>
+    <span id="savedNote" class="muted" hidden>Saved ✓</span>
+  </div>
+  <script src="rules.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
