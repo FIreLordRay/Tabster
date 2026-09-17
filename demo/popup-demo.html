@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+  Static mock of popup.html with sample data, for README screenshots only.
+  Not part of the extension — it never runs inside Chrome/loads chrome.* APIs.
+-->
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Tabster (demo)</title>
+  <link rel="stylesheet" href="../popup.css" />
+  <style>
+    html { min-height: 100%; background: linear-gradient(135deg, #eef1f5, #dde3ea); }
+    body {
+      width: 340px !important;
+      max-height: none !important;
+      margin: 48px auto !important;
+      border: 1px solid #d8dadd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(20, 30, 50, 0.16);
+    }
+    main { max-height: none !important; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">
+      <strong>Tabster</strong>
+      <span class="muted">27 tabs</span>
+    </div>
+    <div class="actions">
+      <label class="switch" title="Auto-sort new tabs">
+        <input type="checkbox" checked />
+        <span>Auto-sort</span>
+      </label>
+      <button>Sort now</button>
+      <button title="Manage categories">⚙</button>
+    </div>
+  </header>
+  <main id="groups"></main>
+
+  <script>
+    const SAMPLE = [
+      { category: "Development", color: "blue", tabs: [
+        { title: "FIreLordRay/Tabster — GitHub", fav: "🔧" },
+        { title: "Stack Overflow — chrome.tabGroups API", fav: "❔" },
+        { title: "MDN — Service Workers", fav: "📘" },
+        { title: "localhost:5173 — Vite dev server", fav: "⚡" },
+      ]},
+      { category: "AI Tools", color: "purple", tabs: [
+        { title: "Claude", fav: "✦" },
+        { title: "ChatGPT", fav: "◆" },
+      ]},
+      { category: "Social", color: "pink", tabs: [
+        { title: "reddit.com/r/webdev", fav: "🟠" },
+        { title: "X / Twitter", fav: "🐦" },
+        { title: "LinkedIn", fav: "💼" },
+      ]},
+      { category: "Video & Media", color: "red", tabs: [
+        { title: "YouTube — lofi beats to code to", fav: "▶" },
+        { title: "Spotify Web Player", fav: "🎵" },
+      ]},
+      { category: "Shopping", color: "orange", tabs: [
+        { title: "Amazon — USB-C hub", fav: "📦" },
+      ]},
+      { category: "Productivity", color: "green", tabs: [
+        { title: "Google Docs — Project brief", fav: "📄" },
+        { title: "Notion — Roadmap", fav: "🗂" },
+        { title: "Google Calendar", fav: "📅" },
+      ]},
+      { category: "Other", color: "grey", tabs: [
+        { title: "Weather — 10 day forecast", fav: "☁" },
+      ]},
+    ];
+
+    const groupsEl = document.getElementById("groups");
+    for (const group of SAMPLE) {
+      const groupEl = document.createElement("div");
+      groupEl.className = "group";
+
+      const header = document.createElement("div");
+      header.className = "group-header";
+      header.innerHTML = `
+        <span class="dot c-${group.color}"></span>
+        <span class="group-name">${group.category}</span>
+        <span class="group-count">${group.tabs.length}</span>
+        <span class="chevron">▾</span>
+      `;
+
+      const list = document.createElement("div");
+      list.className = "tab-list";
+      for (const tab of group.tabs) {
+        const row = document.createElement("div");
+        row.className = "tab-row";
+        row.innerHTML = `<span class="favicon" style="display:inline-flex;align-items:center;justify-content:center;font-size:11px;">${tab.fav}</span><span class="tab-title">${tab.title}</span><button class="close-btn" title="Close tab">✕</button>`;
+        list.appendChild(row);
+      }
+
+      groupEl.appendChild(header);
+      groupEl.appendChild(list);
+      groupsEl.appendChild(groupEl);
+    }
+  </script>
+</body>
+</html>
