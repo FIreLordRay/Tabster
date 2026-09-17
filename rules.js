@@ -10,6 +10,7 @@ const DEFAULT_RULES = [
     "portal.azure.com", "docker.com", "hub.docker.com", "kubernetes.io", "postman.com",
     "figma.com", "jsfiddle.net", "codesandbox.io", "atlassian.com", "sourceforge.net",
     "pypi.org", "rubygems.org", "crates.io", "news.ycombinator.com", "w3schools.com",
+    "geeksforgeeks.org", "leetcode.com", "hackerrank.com", "realpython.com",
   ], keywords: ["localhost", "127.0.0.1"] },
   { category: "AI Tools", color: "purple", domains: [
     "chatgpt.com", "claude.ai", "openai.com", "anthropic.com", "perplexity.ai",
@@ -40,6 +41,7 @@ const DEFAULT_RULES = [
   ], keywords: [] },
   { category: "Cloud Storage", color: "green", domains: [
     "drive.google.com", "dropbox.com", "onedrive.live.com", "icloud.com", "box.com", "mega.nz",
+    "sharepoint.com", "officeapps.live.com",
   ], keywords: [] },
   { category: "Finance", color: "yellow", domains: [
     "paypal.com", "venmo.com", "chase.com", "bankofamerica.com", "wellsfargo.com",
@@ -55,8 +57,8 @@ const DEFAULT_RULES = [
     "khanacademy.org", "brilliant.org", "duolingo.com",
   ], keywords: [] },
   { category: "Email", color: "yellow", domains: [
-    "mail.google.com", "gmail.com", "outlook.com", "outlook.office.com", "mail.yahoo.com",
-    "protonmail.com",
+    "mail.google.com", "gmail.com", "outlook.com", "outlook.office.com", "outlook.office365.com",
+    "outlook.live.com", "mail.yahoo.com", "protonmail.com",
   ], keywords: [] },
   { category: "News", color: "cyan", domains: [
     "cnn.com", "nytimes.com", "bbc.com", "reuters.com", "apnews.com", "theguardian.com",
