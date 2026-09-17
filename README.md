@@ -18,6 +18,12 @@ a glance — counts per category, click a tab to jump to it, one click to close
 it — and an options page lets you add, rename, recolor, or delete categories
 without touching code.
 
+**Built-in categories:** Development, AI Tools, Social, Video & Media,
+Shopping, Productivity, Communication, Cloud Storage, Finance, Travel & Maps,
+Learning & Reference, Email, News — covering well over 100 common domains out
+of the box, so far fewer tabs land in the "Other" catch-all. Add more of your
+own from the options page any time.
+
 **Highlights**
 - Automatic categorization by domain/keyword — no AI calls, no network
   requests, nothing leaves your browser
